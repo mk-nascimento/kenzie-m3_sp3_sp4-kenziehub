@@ -21,6 +21,7 @@ const Input = ({ disabled, error, id, label, type, ...rest }, ref) => {
           type={inputType ? inputType : "text"}
           {...rest}
         />
+
         {passwordInput ? (
           <button disabled={disabled} type="button" onClick={showPassword}>
             {inputType == "password" ? <FaRegEye /> : <FaRegEyeSlash />}

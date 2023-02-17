@@ -1,9 +1,12 @@
+import Providers from "./contexts";
 import AppRoutes from "./routes";
 
 function App() {
   return (
     <>
-      <AppRoutes />
+      <Providers>
+        <AppRoutes />
+      </Providers>
     </>
   );
 }

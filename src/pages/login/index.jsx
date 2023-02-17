@@ -8,15 +8,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "./validations";
 
-import api from "/src/services/api.js";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "/src/contexts/UserContext";
 
-const Login = ({ userStates }) => {
-  const [user, setUser] = userStates;
-  const navigate = useNavigate();
-  const [disabled, setDisabled] = useState(false);
+const Login = () => {
+  document.title = "Kenzie Hub - Login";
+
+  const { disabled, login } = useContext(UserContext);
 
   const {
     formState: { errors },
@@ -26,46 +24,13 @@ const Login = ({ userStates }) => {
     resolver: yupResolver(schema),
   });
 
-  const storage = (data) => {
-    localStorage.setItem("@USERID", data.user.id);
-    localStorage.setItem("@TOKEN", data.token);
-  };
-
-  const submit = async (data) => {
-    try {
-      const response = await api.post("/sessions", data);
-
-      setUser(response.data.user);
-      setDisabled(true);
-      navigate("/dashboard");
-
-      response.data ? storage(response.data) : null;
-
-      toast.success("Login realizado !", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-sucess",
-      });
-    } catch (error) {
-      toast.error("Dados inválidos !", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-negative",
-      });
-
-      console.error(error);
-    } finally {
-      setDisabled(false);
-    }
-  };
-
   return (
     <StyledLogin className="form-container column center">
       <header>
         <img src={Logo} alt={`Logo ${document.title}`} />
       </header>
       <main>
-        <Form className="form-login column" onSubmit={handleSubmit(submit)}>
+        <Form className="form-login column" onSubmit={handleSubmit(login)}>
           <h1 className="form-title__login Title1">Login</h1>
 
           <Input
@@ -93,7 +58,8 @@ const Login = ({ userStates }) => {
           <Button
             className={`bg-primary${disabled ? " disabled" : ""}`}
             disabled={disabled}
-            type="submit">
+            type="submit"
+          >
             Entrar
           </Button>
 

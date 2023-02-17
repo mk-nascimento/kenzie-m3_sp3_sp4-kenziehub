@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { UserContext } from "/src/contexts/UserContext";
 import StyledHeader from "./styles";
 import Container from "/src/styles/container";
 
-const Header = ({ user }) => {
+const Header = () => {
+  const { user } = useContext(UserContext);
+
   return (
     <StyledHeader>
       <Container className="container-header column">

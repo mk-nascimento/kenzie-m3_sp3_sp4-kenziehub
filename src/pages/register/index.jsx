@@ -1,23 +1,20 @@
 import registerInputs from "./inputsData";
 import StyledRegister, { Select } from "./styles";
-import Nav from "/src/components/Nav";
 import Input from "/src/components/Input";
+import Nav from "/src/components/Nav";
 import Button from "/src/styles/button";
 import Form from "/src/styles/form.js";
-import api from "/src/services/api.js";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "./validations";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useContext } from "react";
+import { UserContext } from "/src/contexts/UserContext";
 
 const Register = () => {
   document.title = "Kenzie Hub - Register";
 
-  const [disabled, setDisabled] = useState(false);
-  const navigate = useNavigate();
+  const { disabled, register: registerForm } = useContext(UserContext);
 
   const {
     formState: { errors },
@@ -27,29 +24,18 @@ const Register = () => {
     resolver: yupResolver(schema),
   });
 
-  const submit = async (data) => {
-    try {
-      const response = await api.post("/users", data);
-
-      navigate("/");
-
-      toast.success("Cadastro realizado !", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-sucess",
-      });
-    } catch (error) {
-      toast.error("Não foi possível realizar seu cadastro !", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-negative",
-      });
-
-      console.error(error);
-    } finally {
-      setDisabled(false);
-    }
-  };
+  const modules = [
+    {
+      moduleValue: "Primeiro módulo (Introdução ao Frontend)",
+      option: "1 º Módulo",
+    },
+    { moduleValue: "Segundo módulo (Frontend Avançado)", option: "2 º Módulo" },
+    {
+      moduleValue: "Terceiro módulo (Introdução ao Backend)",
+      option: "3 º Módulo",
+    },
+    { moduleValue: "Quarto módulo (Backend Avançado)", option: "4 º Módulo" },
+  ];
 
   return (
     <>
@@ -62,7 +48,8 @@ const Register = () => {
         <StyledRegister className="container__form-page">
           <Form
             className="form-register column"
-            onSubmit={handleSubmit(submit)}>
+            onSubmit={handleSubmit(registerForm)}
+          >
             <h1 className="form-title__register Title1">Crie sua conta</h1>
 
             <p className="form-desc__register color-grey-1">
@@ -88,28 +75,17 @@ const Register = () => {
                 {...register("course_module")}
                 defaultValue=""
                 disabled={disabled}
-                id="course_module">
+                id="course_module"
+              >
                 <option value="" disabled>
                   Selecione seu módulo
                 </option>
-                <option value="1 º Módulo (Frontend iniciante)">
-                  1 º Módulo
-                </option>
-                <option value="2 º Módulo (Frontend intermediário)">
-                  2 º Módulo
-                </option>
-                <option value="3 º Módulo (Frontend avançado)">
-                  3 º Módulo
-                </option>
-                <option value="4 º Módulo (Backend iniciante)">
-                  4 º Módulo
-                </option>
-                <option value="5 º Módulo (Backend intermediário)">
-                  5 º Módulo
-                </option>
-                <option value="6 º Módulo (Backend avançado)">
-                  6 º Módulo
-                </option>
+
+                {modules.map(({ moduleValue, option }) => (
+                  <option key={option} value={moduleValue}>
+                    {option}
+                  </option>
+                ))}
               </Select>
               {errors ? (
                 <small>{errors["course_module"]?.message}</small>
@@ -119,7 +95,8 @@ const Register = () => {
             <Button
               className={`bg-primary${disabled ? " disabled" : ""}`}
               disabled={disabled}
-              type="submit">
+              type="submit"
+            >
               Cadastrar
             </Button>
           </Form>

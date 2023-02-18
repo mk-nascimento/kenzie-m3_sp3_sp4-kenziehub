@@ -11,19 +11,19 @@ const Typography = createGlobalStyle`
   .Title1 {
     ${defaultText}
     font-weight: 700;
-    font-size: calc(16rem/16);
+    font-size: calc(18rem/16);
   }
 
   .Title2 {
     ${defaultText}
-    font-weight: 700;
+    font-weight: 600;
     font-size: calc(16rem/16);
   }
 
   .Title3 {
     ${defaultText}
     font-weight: 700;
-    font-size: calc(16rem/16);
+    font-size: calc(14rem/16);
   }
 
   .Headline {
@@ -34,7 +34,7 @@ const Typography = createGlobalStyle`
 
   .HeadlineBold {
     ${defaultText}
-    font-weight: 700;
+    font-weight: 600;
     font-size: calc(12rem/16);
   }
 

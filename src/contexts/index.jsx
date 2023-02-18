@@ -1,7 +1,12 @@
 import { UserProvider } from "./UserContext";
+import { TechProvider } from "./TechContext";
 
 const Providers = ({ children }) => {
-  return <UserProvider>{children}</UserProvider>;
+  return (
+    <UserProvider>
+      <TechProvider>{children}</TechProvider>
+    </UserProvider>
+  );
 };
 
 export default Providers;

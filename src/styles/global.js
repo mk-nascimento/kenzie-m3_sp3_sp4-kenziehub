@@ -15,6 +15,7 @@ const Global = createGlobalStyle`
     --negative: #E83F5B;
     --radius-1: 4px;
     --radius-2: 8px;
+    --white: #FFF
   }
 
   body {

@@ -3,7 +3,7 @@ import Container from "/src/styles/container";
 
 const StyledMainContainer = styled( Container )`
   gap: 16px;
-  padding: 36px 12px;
+  padding: 20px 12px;
 `;
 
 export default StyledMainContainer;

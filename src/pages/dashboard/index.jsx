@@ -4,6 +4,7 @@ import Header from "/src/components/Header";
 
 import { useContext } from "react";
 import { UserContext } from "/src/contexts/UserContext";
+import TechList from "/src/components/TechList";
 
 const Dashboard = () => {
   document.title = "Kenzie Hub - Dashboard";
@@ -17,7 +18,9 @@ const Dashboard = () => {
       <Nav buttonText="Sair" classNameNav="container__dash-page" />
       <Header user={user} />
       <main>
-        <StyledMainContainer className="dash-page__main column"></StyledMainContainer>
+        <StyledMainContainer className="dash-page__main column">
+          <TechList />
+        </StyledMainContainer>
       </main>
     </>
   );

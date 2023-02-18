@@ -10,6 +10,10 @@ const defaultButton = css`
   padding: 10px 0;
   text-align: center;
   width: 100%;
+
+  &.bg-none {
+    background-color: none;
+  }
 `;
 
 const Button = styled.button`

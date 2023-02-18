@@ -47,7 +47,7 @@ const Register = () => {
       <main>
         <StyledRegister className="container__form-page">
           <Form
-            className="form-register column"
+            className="form-register radius column"
             onSubmit={handleSubmit(registerForm)}
           >
             <h1 className="form-title__register Title1">Crie sua conta</h1>

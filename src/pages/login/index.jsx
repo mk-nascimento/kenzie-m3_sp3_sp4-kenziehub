@@ -30,7 +30,10 @@ const Login = () => {
         <img src={Logo} alt={`Logo ${document.title}`} />
       </header>
       <main>
-        <Form className="form-login column" onSubmit={handleSubmit(login)}>
+        <Form
+          className="form-login radius column"
+          onSubmit={handleSubmit(login)}
+        >
           <h1 className="form-title__login Title1">Login</h1>
 
           <Input

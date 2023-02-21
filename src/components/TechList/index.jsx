@@ -2,12 +2,16 @@ import { useContext } from "react";
 import { TechContext } from "/src/contexts/TechContext";
 import TechListItem from "../TechListItem";
 import { PlusButton, PlusIcon, TechListDiv, TechListUl } from "./style";
+import Loading from "../Loading";
 
 const TechList = () => {
   const {
+    loading,
     registerModal,
     techsStates: [techs],
   } = useContext(TechContext);
+
+  const techsLength = techs.length;
 
   return (
     <TechListDiv className="column">
@@ -19,9 +23,15 @@ const TechList = () => {
         </PlusButton>
       </div>
       <TechListUl className="bg-grey-3 column">
-        {techs.map((tech) => (
-          <TechListItem key={tech.id} tech={tech} />
-        ))}
+        {loading ? (
+          <Loading />
+        ) : techsLength ? (
+          techs.map((tech) => <TechListItem key={tech.id} tech={tech} />)
+        ) : (
+          <li className="Title3">
+            Você ainda não possui tecnologias cadastradas
+          </li>
+        )}
       </TechListUl>
     </TechListDiv>
   );

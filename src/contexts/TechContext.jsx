@@ -37,7 +37,7 @@ export const TechProvider = ({ children }) => {
   ];
 
   const setTechValues = (tech) =>
-    setDefaultModalValues({ status: tech.status, title: tech.title + "kkk" });
+    setDefaultModalValues({ status: tech.status, title: tech.title });
 
   const closeModal = () => {
     setDefaultModalValues({

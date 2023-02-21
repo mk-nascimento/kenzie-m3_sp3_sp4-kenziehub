@@ -96,6 +96,8 @@ export const UserProvider = ({ children }) => {
       const profile = await api("/profile");
 
       profile.data ? setUser(profile.data) : null;
+
+      if (profile.status >= 200 && profile.status < 300) navigate("/dashboard");
     } catch (error) {
       console.error(error);
     } finally {

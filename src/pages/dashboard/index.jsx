@@ -10,13 +10,13 @@ const Dashboard = () => {
   document.title = "Kenzie Hub - Dashboard";
 
   const {
-    userStates: [user, ,],
+    loadingStates: [loading],
   } = useContext(UserContext);
 
   return (
     <>
       <Nav buttonText="Sair" classNameNav="container__dash-page" />
-      <Header user={user} />
+      <Header center={loading} />
       <main>
         <StyledMainContainer className="dash-page__main column">
           <TechList />

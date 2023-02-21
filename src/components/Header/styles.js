@@ -16,7 +16,8 @@ const StyledHeader = styled.header`
     @media screen and (min-width: 768px){
       align-items: center;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: ${props => props.center ? "center" : "space-between"};
+      
     }
   }
 

@@ -6,7 +6,7 @@ import LoadingComponent from "../Loading";
 
 const TechList = () => {
   const {
-    loading,
+    techLoading,
     registerModal,
     techsStates: [techs],
   } = useContext(TechContext);
@@ -23,7 +23,7 @@ const TechList = () => {
         </PlusButton>
       </div>
       <TechListUl className="bg-grey-3 column">
-        {loading ? (
+        {techLoading ? (
           <LoadingComponent />
         ) : techsLength ? (
           techs.map((tech) => <TechListItem key={tech.id} tech={tech} />)

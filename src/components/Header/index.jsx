@@ -6,7 +6,7 @@ import LoadingComponent from "../Loading";
 
 const Header = ({ center }) => {
   const {
-    loadingStates: [loading],
+    loadingStates: [userLoading],
     user,
   } = useContext(UserContext);
 
@@ -14,10 +14,10 @@ const Header = ({ center }) => {
     <StyledHeader center={center}>
       <Container
         className={`container-header column${
-          loading ? " a-center j-center" : ""
+          userLoading ? " a-center j-center" : ""
         }`}
       >
-        {loading ? (
+        {userLoading ? (
           <LoadingComponent height="calc(20rem/16)" />
         ) : (
           <>

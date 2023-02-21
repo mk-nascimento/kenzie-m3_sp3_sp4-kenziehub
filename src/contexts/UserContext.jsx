@@ -7,7 +7,7 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [disabled, setDisabled] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [userloading, setUSerLoading] = useState(false);
   const [user, setUser] = useState({});
 
   const Location = useLocation();
@@ -107,7 +107,7 @@ export const UserProvider = ({ children }) => {
   const values = {
     disabled,
     id,
-    loadingStates: [loading, setLoading],
+    loadingStates: [userloading, setUSerLoading],
     login,
     logout,
     navigate,

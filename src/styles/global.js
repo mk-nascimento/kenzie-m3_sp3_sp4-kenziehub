@@ -32,6 +32,11 @@ const Global = createGlobalStyle`
     font-weight: 400;
     font-size: calc(12rem / 16);
     user-select: none;
+    width: fit-content;
+  }
+
+  small {
+    color: var(--negative);
   }
 `;
 export default Global;

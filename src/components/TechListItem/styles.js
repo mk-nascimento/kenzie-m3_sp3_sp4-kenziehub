@@ -4,6 +4,7 @@ const StyledListItem = styled.li`
   background-color: var(--grey-4);
   border-radius: var(--radius-1);
   padding: 12px;
+  cursor: pointer;
 
   &:focus, &:hover {
     background-color: var(--grey-2);

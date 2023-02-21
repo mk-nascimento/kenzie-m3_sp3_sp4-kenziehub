@@ -32,6 +32,10 @@ const InputContainer = styled.div`
     padding: 10px 12px;
     width: 100%;
 
+    ::placeholder{
+      color: var(--grey-1);
+    }
+
     &:hover,
     &:focus {
       border-color: var(--grey-0);

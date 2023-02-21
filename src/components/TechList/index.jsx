@@ -4,17 +4,17 @@ import TechListItem from "../TechListItem";
 import { PlusButton, PlusIcon, TechListDiv, TechListUl } from "./style";
 
 const TechList = () => {
-  const { techs } = useContext(TechContext);
+  const {
+    registerModal,
+    techsStates: [techs],
+  } = useContext(TechContext);
 
   return (
     <TechListDiv className="column">
       <div className="TechList-header row a-center j-between">
         <h2 className="Title1">Tecnologias</h2>
 
-        <PlusButton
-          className="bg-grey-3 flex"
-          onClick={() => console.log("va")}
-        >
+        <PlusButton className="bg-grey-3 flex" onClick={registerModal}>
           <PlusIcon />
         </PlusButton>
       </div>

@@ -21,13 +21,13 @@ const StyledLogin = styled.div`
       background-color: var(--primary-focus);
       border-color: var(--primary-focus);
     }
+
+    &.disabled {
+      background-color: var(--primary-negative);
+      border-color: var(--primary-negative);
+    }
   }
-  
-  form.form-login > button.disabled {
-    background-color: var(--primary-negative);
-    border-color: var(--primary-negative);
-  }
-  
+
   form.form-login > a {
     &:hover,
     &:focus {

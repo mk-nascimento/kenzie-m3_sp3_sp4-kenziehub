@@ -22,11 +22,11 @@ const StyledRegister = styled( Container )`
       background-color: var(--primary-focus);
       border-color: var(--primary-focus);
     }
-  }
 
-  & > form.form-register > button.disabled {
-    background-color: var(--primary-negative);
-    border-color: var(--primary-negative);
+    &.disabled {
+      background-color: var(--primary-negative);
+      border-color: var(--primary-negative);
+    }
   }
 `;
 

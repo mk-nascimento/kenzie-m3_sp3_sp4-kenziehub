@@ -11,7 +11,7 @@ const Nav = ({ buttonText, classNameNav, page }) => {
 
   return (
     <StyledNav>
-      <Container className={`${classNameNav} row a-center j-between`}>
+      <Container className={`nav ${classNameNav} row a-center j-between`}>
         <img src={Logo} alt={`Logo ${document.title}`} />
 
         <Button

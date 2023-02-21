@@ -7,7 +7,11 @@ import api from "/src/services/api.js";
 export const TechContext = createContext({});
 
 export const TechProvider = ({ children }) => {
-  const { token, user } = useContext(UserContext);
+  const {
+    loadingStates: [loading, setLoading],
+    token,
+    user,
+  } = useContext(UserContext);
 
   const [defaultModalValues, setDefaultModalValues] = useState({
     status: "",
@@ -21,6 +25,8 @@ export const TechProvider = ({ children }) => {
   api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   useEffect(() => {
+    user.id ? setLoading(false) : setLoading(true);
+
     user.techs ? setTechs(user.techs) : null;
   }, [user]);
 
@@ -56,6 +62,7 @@ export const TechProvider = ({ children }) => {
   const deleteTech = async () => {
     try {
       setDisabled(true);
+      setLoading(true);
 
       const deleteResponse = await api.delete(`/users/techs/${techId}`);
 
@@ -81,6 +88,7 @@ export const TechProvider = ({ children }) => {
       console.error(error);
     } finally {
       setDisabled(false);
+      setLoading(false);
     }
   };
 
@@ -99,6 +107,7 @@ export const TechProvider = ({ children }) => {
   const registerTech = async (data) => {
     try {
       setDisabled(true);
+      setLoading(true);
 
       const registerResponse = await api.post("/users/techs", data);
 
@@ -124,6 +133,7 @@ export const TechProvider = ({ children }) => {
       console.error(error);
     } finally {
       setDisabled(false);
+      setLoading(false);
     }
   };
 
@@ -138,6 +148,7 @@ export const TechProvider = ({ children }) => {
 
     try {
       setDisabled(true);
+      setLoading(true);
 
       const updateResponse = await api.put(`/users/techs/${techId}`, data);
 
@@ -163,6 +174,7 @@ export const TechProvider = ({ children }) => {
       console.error(error);
     } finally {
       setDisabled(false);
+      setLoading(false);
     }
   };
 
@@ -171,6 +183,7 @@ export const TechProvider = ({ children }) => {
     defaultValues: defaultModalValues,
     deleteTech,
     disabled,
+    loading,
     modalStates: [typeModal, setTypeModal],
     registerModal,
     registerTech,

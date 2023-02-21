@@ -6,8 +6,10 @@ import api from "/src/services/api.js";
 export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
   const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState({});
+
   const Location = useLocation();
   const navigate = useNavigate();
 
@@ -105,6 +107,7 @@ export const UserProvider = ({ children }) => {
   const values = {
     disabled,
     id,
+    loadingStates: [loading, setLoading],
     login,
     logout,
     navigate,

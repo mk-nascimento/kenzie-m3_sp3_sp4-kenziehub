@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { TechContext } from "/src/contexts/TechContext";
 import TechListItem from "../TechListItem";
 import { PlusButton, PlusIcon, TechListDiv, TechListUl } from "./style";
-import Loading from "../Loading";
+import LoadingComponent from "../Loading";
 
 const TechList = () => {
   const {
@@ -24,7 +24,7 @@ const TechList = () => {
       </div>
       <TechListUl className="bg-grey-3 column">
         {loading ? (
-          <Loading />
+          <LoadingComponent />
         ) : techsLength ? (
           techs.map((tech) => <TechListItem key={tech.id} tech={tech} />)
         ) : (

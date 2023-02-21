@@ -1,8 +1,8 @@
-import Spinner from "./styled";
+import Spinner from "./styles";
 import SpinnerSvg from "/src/assets/spinner.svg";
 
-const Loading = () => {
-  return <Spinner src={SpinnerSvg} alt="loading" height="200px" />;
+const LoadingComponent = ({ height }) => {
+  return <Spinner src={SpinnerSvg} alt="loading" height={height} />;
 };
 
-export default Loading;
+export default LoadingComponent;

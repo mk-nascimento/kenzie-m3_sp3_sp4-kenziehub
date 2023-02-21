@@ -91,11 +91,15 @@ export const UserProvider = ({ children }) => {
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
     try {
+      setUSerLoading(true);
+
       const profile = await api("/profile");
 
       profile.data ? setUser(profile.data) : null;
     } catch (error) {
       console.error(error);
+    } finally {
+      setUSerLoading(false);
     }
   };
 

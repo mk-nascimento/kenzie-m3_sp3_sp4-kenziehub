@@ -39,6 +39,9 @@ export const TechProvider = ({ children }) => {
   const setTechValues = (tech) =>
     setDefaultModalValues({ status: tech.status, title: tech.title });
 
+  const okResponse = (responseStatus = number) =>
+    responseStatus >= 200 && responseStatus < 300;
+
   const closeModal = () => {
     setDefaultModalValues({
       status: "",
@@ -54,16 +57,20 @@ export const TechProvider = ({ children }) => {
     try {
       setDisabled(true);
 
-      await api.delete(`/users/techs/${techId}`);
+      const deleteResponse = await api.delete(`/users/techs/${techId}`);
 
-      toast.success("Tecnologia excluída!", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-sucess",
-      });
+      if (okResponse(deleteResponse.status)) {
+        closeModal();
 
-      setTechs(techs.filter((tech) => tech.id !== techId));
-      setTypeModal(false);
+        toast.success("Tecnologia excluída!", {
+          autoClose: 2000,
+          className: "color-grey-2 fill-negative",
+          progressClassName: "bg-sucess",
+        });
+
+        setTechs(techs.filter((tech) => tech.id !== techId));
+        setTypeModal(false);
+      }
     } catch (error) {
       toast.error("Ocorreu um erro ao tentar excluir!", {
         autoClose: 2000,
@@ -93,16 +100,20 @@ export const TechProvider = ({ children }) => {
     try {
       setDisabled(true);
 
-      const response = await api.post("/users/techs", data);
+      const registerResponse = await api.post("/users/techs", data);
 
-      toast.success("Tecnologia cadastrada!", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-sucess",
-      });
+      if (okResponse(registerResponse.status)) {
+        closeModal();
 
-      setTechs([...techs, response.data]);
-      setTypeModal(false);
+        toast.success("Tecnologia cadastrada!", {
+          autoClose: 2000,
+          className: "color-grey-2 fill-negative",
+          progressClassName: "bg-sucess",
+        });
+
+        setTechs([...techs, registerResponse.data]);
+        setTypeModal(false);
+      }
     } catch (error) {
       toast.error("Não foi possível cadastrar a tecnologia!", {
         autoClose: 2000,
@@ -128,16 +139,20 @@ export const TechProvider = ({ children }) => {
     try {
       setDisabled(true);
 
-      await api.put(`/users/techs/${techId}`, data);
+      const updateResponse = await api.put(`/users/techs/${techId}`, data);
 
-      toast.success("Status de tecnologia atualizado!", {
-        autoClose: 2000,
-        className: "color-grey-2 fill-negative",
-        progressClassName: "bg-sucess",
-      });
+      if (okResponse(updateResponse.status)) {
+        closeModal();
 
-      setTechs(updateStatusTech(data));
-      setTypeModal(false);
+        toast.success("Status de tecnologia atualizado!", {
+          autoClose: 2000,
+          className: "color-grey-2 fill-negative",
+          progressClassName: "bg-sucess",
+        });
+
+        setTechs(updateStatusTech(data));
+        setTypeModal(false);
+      }
     } catch (error) {
       toast.error("Não foi possível atualizar a tecnologia!", {
         autoClose: 2000,

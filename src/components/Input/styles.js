@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const InputContainer = styled.div`
+export const InputContainer = styled.div`
   gap: 18px;
 
   & > div.input-place {
@@ -44,5 +44,3 @@ const InputContainer = styled.div`
     outline: none;
   }
 `;
-
-export default InputContainer;

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { UserContext } from "./UserContext";
-import api from "/src/services/api.js";
+import { api } from "/src/services/api.js";
 
 export const TechContext = createContext({});
 
@@ -69,7 +69,7 @@ export const TechProvider = ({ children }) => {
 
         toast.success("Tecnologia excluída!", {
           autoClose: 2000,
-          className: "color-grey-2 fill-negative",
+          className: "bg-grey-2 color-grey-0 fill-negative",
           progressClassName: "bg-sucess",
         });
 
@@ -79,7 +79,7 @@ export const TechProvider = ({ children }) => {
     } catch (error) {
       toast.error("Ocorreu um erro ao tentar excluir!", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-negative",
       });
 
@@ -114,7 +114,7 @@ export const TechProvider = ({ children }) => {
 
         toast.success("Tecnologia cadastrada!", {
           autoClose: 2000,
-          className: "color-grey-2 fill-negative",
+          className: "bg-grey-2 color-grey-0 fill-negative",
           progressClassName: "bg-sucess",
         });
 
@@ -124,7 +124,7 @@ export const TechProvider = ({ children }) => {
     } catch (error) {
       toast.error("Não foi possível cadastrar a tecnologia!", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-negative",
       });
 
@@ -155,7 +155,7 @@ export const TechProvider = ({ children }) => {
 
         toast.success("Status de tecnologia atualizado!", {
           autoClose: 2000,
-          className: "color-grey-2 fill-negative",
+          className: "bg-grey-2 color-grey-0 fill-negative",
           progressClassName: "bg-sucess",
         });
 
@@ -165,7 +165,7 @@ export const TechProvider = ({ children }) => {
     } catch (error) {
       toast.error("Não foi possível atualizar a tecnologia!", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-negative",
       });
 

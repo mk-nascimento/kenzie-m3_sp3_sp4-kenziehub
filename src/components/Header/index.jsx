@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { UserContext } from "/src/contexts/UserContext";
-import StyledHeader from "./styles";
-import Container from "/src/styles/container";
-import LoadingComponent from "../Loading";
+import { StyledHeader } from "./styles";
+import { Container } from "/src/styles/container";
+import { LoadingComponent } from "../Loading";
 
-const Header = ({ center }) => {
+export const Header = ({ center }) => {
   const {
     loadingStates: [userLoading],
     user,
@@ -31,5 +31,3 @@ const Header = ({ center }) => {
     </StyledHeader>
   );
 };
-
-export default Header;

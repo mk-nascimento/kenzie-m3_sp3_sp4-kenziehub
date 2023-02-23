@@ -1,4 +1,4 @@
-const registerInputs = [
+export const registerInputs = [
   {
     id: "name",
     label: "Nome :",
@@ -36,5 +36,3 @@ const registerInputs = [
     type: "text",
   },
 ];
-
-export default registerInputs;

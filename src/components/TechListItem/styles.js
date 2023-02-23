@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledListItem = styled.li`
+export const StyledListItem = styled.li`
   background-color: var(--grey-4);
   border-radius: var(--radius-1);
   padding: 12px;
@@ -13,5 +13,3 @@ const StyledListItem = styled.li`
       color: var(--grey-0);
     }
 `;
-
-export default StyledListItem;

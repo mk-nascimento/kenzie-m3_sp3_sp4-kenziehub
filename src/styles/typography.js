@@ -6,7 +6,7 @@ const defaultText = css`
   user-select: none;
 `;
 
-const Typography = createGlobalStyle`
+export const Typography = createGlobalStyle`
 
   .Title1 {
     ${defaultText}
@@ -46,4 +46,3 @@ const Typography = createGlobalStyle`
   }
 
 `;
-export default Typography;

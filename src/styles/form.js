@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Form = styled.form`
+export const Form = styled.form`
   background-color: var(--grey-3);
   padding: 32px 18px;
 
@@ -8,5 +8,3 @@ const Form = styled.form`
     border-radius: var(--radius-1);
   }
 `;
-
-export default Form;

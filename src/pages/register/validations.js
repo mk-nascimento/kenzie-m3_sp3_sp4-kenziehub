@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-const schema = yup
+export const schema = yup
   .object( {
     name: yup
       .string()
@@ -31,5 +31,3 @@ const schema = yup
       .required( `Campo "Selecionar módulo" obrigatório` ),
   } )
   .required();
-
-export default schema;

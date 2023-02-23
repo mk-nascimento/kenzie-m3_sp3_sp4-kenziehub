@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Container from "/src/styles/container";
+import { Container } from "/src/styles/container";
 
-const StyledRegister = styled( Container )`
+export const StyledRegister = styled( Container )`
   & > form.form-register {
     gap: 22px;
   }
@@ -50,5 +50,3 @@ export const Select = styled.select`
     outline: none;
   }
 `;
-
-export default StyledRegister;

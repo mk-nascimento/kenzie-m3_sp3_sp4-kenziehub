@@ -3,14 +3,14 @@ import { Route, Routes } from "react-router-dom";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Modal from "../components/Modal";
+import { Modal } from "../components/Modal";
 import { TechContext } from "../contexts/TechContext";
 
-import Dashboard from "../pages/dashboard";
-import Login from "../pages/login";
-import Register from "../pages/register";
+import { Dashboard } from "../pages/dashboard";
+import { Login } from "../pages/login";
+import { Register } from "../pages/register";
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
   const {
     modalStates: [typeModal],
   } = useContext(TechContext);
@@ -27,5 +27,3 @@ const AppRoutes = () => {
     </>
   );
 };
-
-export default AppRoutes;

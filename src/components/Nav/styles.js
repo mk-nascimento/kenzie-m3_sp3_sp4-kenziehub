@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledNav = styled.nav`
+export const StyledNav = styled.nav`
   padding-top: 56px;
   padding-bottom: 36px;
 
@@ -16,5 +16,3 @@ const StyledNav = styled.nav`
     }
   }
 `;
-
-export default StyledNav;

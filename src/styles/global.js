@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const Global = createGlobalStyle`
+export const Global = createGlobalStyle`
 
   :root {
     --primary: #FF577F;
@@ -38,5 +38,12 @@ const Global = createGlobalStyle`
   small {
     color: var(--negative);
   }
+
+  button.Toastify__close-button{
+    color: var(--grey-1);
+    opacity: 0.75;
+    &:hover, &:focus {
+      opacity: 1;
+    }
+  }
 `;
-export default Global;

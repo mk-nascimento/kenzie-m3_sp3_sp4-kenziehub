@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import api from "/src/services/api.js";
+import { api } from "/src/services/api.js";
 
 export const UserContext = createContext({});
 
@@ -44,7 +44,7 @@ export const UserProvider = ({ children }) => {
 
       toast.success("Login realizado !", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-sucess",
       });
 
@@ -52,7 +52,7 @@ export const UserProvider = ({ children }) => {
     } catch (error) {
       toast.error("Dados inválidos !", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-negative",
       });
 
@@ -68,7 +68,7 @@ export const UserProvider = ({ children }) => {
 
       toast.success("Cadastro realizado !", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-sucess",
       });
 
@@ -77,7 +77,7 @@ export const UserProvider = ({ children }) => {
     } catch (error) {
       toast.error("Não foi possível realizar seu cadastro !", {
         autoClose: 2000,
-        className: "color-grey-2 fill-negative",
+        className: "bg-grey-2 color-grey-0 fill-negative",
         progressClassName: "bg-negative",
       });
 

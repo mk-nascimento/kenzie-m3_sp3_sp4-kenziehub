@@ -1,10 +1,10 @@
-import Reset from "./reset.js";
-import Layouts from "./layouts.js";
-import Global from "./global.js";
-import Colors from "./colors.js";
-import Typography from "./typography.js";
+import { Reset } from "./reset.js";
+import { Layouts } from "./layouts.js";
+import { Global } from "./global.js";
+import { Colors } from "./colors.js";
+import { Typography } from "./typography.js";
 
-const GlobalStyles = () => {
+export const GlobalStyles = () => {
   return (
     <>
       <Reset />
@@ -19,5 +19,3 @@ const GlobalStyles = () => {
     </>
   );
 };
-
-export default GlobalStyles;

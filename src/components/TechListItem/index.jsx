@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { TechContext } from "/src/contexts/TechContext";
-import StyledListItem from "./styles";
+import { StyledListItem } from "./styles";
 
-const TechListItem = ({ tech }) => {
+export const TechListItem = ({ tech }) => {
   const { updateModal, setTechId } = useContext(TechContext);
 
   const setId = () => setTechId(tech.id);
@@ -22,5 +22,3 @@ const TechListItem = ({ tech }) => {
     </StyledListItem>
   );
 };
-
-export default TechListItem;

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const Layouts = createGlobalStyle`
+export const Layouts = createGlobalStyle`
 
   .grid {
     display: grid;
@@ -39,6 +39,4 @@ const Layouts = createGlobalStyle`
     justify-content: space-between;
   }
 
-`
-
-export default Layouts;
+`;

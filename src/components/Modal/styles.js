@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import Button from "/src/styles/button";
+import { Button } from "/src/styles/button";
 import { AiOutlineClose } from "react-icons/ai";
 
 const scale = keyframes`
@@ -12,7 +12,7 @@ const scale = keyframes`
   }
 `;
 
-const StyledModal = styled.div`
+export const StyledModal = styled.div`
   background-color: rgb(18 18 20 / 75%);
   height: 100%;
   padding: 12px;
@@ -140,5 +140,3 @@ export const ModalSelectStatus = styled.select`
     color: var(--grey-0);
   }
 `;
-
-export default StyledModal;

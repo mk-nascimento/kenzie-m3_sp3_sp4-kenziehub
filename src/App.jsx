@@ -1,7 +1,7 @@
-import Providers from "./contexts";
-import AppRoutes from "./routes";
+import { Providers } from "./contexts";
+import { AppRoutes } from "./routes";
 
-function App() {
+export const App = () => {
   return (
     <>
       <Providers>
@@ -9,6 +9,4 @@ function App() {
       </Providers>
     </>
   );
-}
-
-export default App;
+};

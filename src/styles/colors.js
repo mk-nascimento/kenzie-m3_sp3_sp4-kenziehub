@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const Colors = createGlobalStyle`
+export const Colors = createGlobalStyle`
 
   .bg-primary {
     background-color: var(--primary);
@@ -90,6 +90,4 @@ const Colors = createGlobalStyle`
     color: var(--negative);
   }
 
-`
-
-export default Colors;
+`;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledLogin = styled.div`
+export const StyledLogin = styled.div`
   border-radius: var(--radius-1);
   height: 100%;
   margin: 0 auto;
@@ -36,5 +36,3 @@ const StyledLogin = styled.div`
     }
   }
 `;
-
-export default StyledLogin;

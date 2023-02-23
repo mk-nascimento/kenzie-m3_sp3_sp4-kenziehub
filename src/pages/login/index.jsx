@@ -1,17 +1,17 @@
-import StyledLogin from "./styles";
-import Input from "/src/components/Input";
-import Form from "/src/styles/form.js";
+import { StyledLogin } from "./styles";
+import { Input } from "/src/components/Input";
+import { Form } from "/src/styles/form.js";
 import Logo from "/src/assets/logo.svg";
-import Button, { Link } from "/src/styles/button";
+import { Button, Link } from "/src/styles/button";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import schema from "./validations";
+import { schema } from "./validations";
 
 import { useContext } from "react";
 import { UserContext } from "/src/contexts/UserContext";
 
-const Login = () => {
+export const Login = () => {
   document.title = "Kenzie Hub - Login";
 
   const { disabled, login } = useContext(UserContext);
@@ -78,5 +78,3 @@ const Login = () => {
     </StyledLogin>
   );
 };
-
-export default Login;

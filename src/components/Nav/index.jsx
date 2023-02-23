@@ -1,11 +1,11 @@
 import Logo from "/src/assets/logo.svg";
-import Button from "/src/styles/button";
-import Container from "/src/styles/container";
-import StyledNav from "./styles";
+import { Button } from "/src/styles/button";
+import { Container } from "/src/styles/container";
+import { StyledNav } from "./styles";
 import { useContext } from "react";
 import { UserContext } from "/src/contexts/UserContext";
 
-const Nav = ({ buttonText, classNameNav, page }) => {
+export const Nav = ({ buttonText, classNameNav, page }) => {
   const { logout, navigate } = useContext(UserContext);
   const backPage = () => navigate("/");
 
@@ -24,5 +24,3 @@ const Nav = ({ buttonText, classNameNav, page }) => {
     </StyledNav>
   );
 };
-
-export default Nav;

@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { TechContext } from "/src/contexts/TechContext";
-import TechListItem from "../TechListItem";
+import { TechListItem } from "../TechListItem";
 import { PlusButton, PlusIcon, TechListDiv, TechListUl } from "./style";
-import LoadingComponent from "../Loading";
+import { LoadingComponent } from "../Loading";
 
-const TechList = () => {
+export const TechList = () => {
   const {
     techLoading,
     registerModal,
@@ -36,5 +36,3 @@ const TechList = () => {
     </TechListDiv>
   );
 };
-
-export default TechList;

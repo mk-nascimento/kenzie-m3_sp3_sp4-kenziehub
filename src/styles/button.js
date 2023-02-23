@@ -16,7 +16,7 @@ const defaultButton = css`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   ${defaultButton}
 
   border: none;
@@ -27,5 +27,3 @@ export const Link = styled( LinkRouter )`
 
   text-decoration: none;
 `;
-
-export default Button;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "/src/styles/button";
+import { Button } from "/src/styles/button";
 import { GoPlus } from "react-icons/go";
 
 export const PlusButton = styled( Button )`

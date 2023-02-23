@@ -1,17 +1,17 @@
-import registerInputs from "./inputsData";
-import StyledRegister, { Select } from "./styles";
-import Input from "/src/components/Input";
-import Nav from "/src/components/Nav";
-import Button from "/src/styles/button";
-import Form from "/src/styles/form.js";
+import { registerInputs } from "./inputsData";
+import { StyledRegister, Select } from "./styles";
+import { Input } from "/src/components/Input";
+import { Nav } from "/src/components/Nav";
+import { Button } from "/src/styles/button";
+import { Form } from "/src/styles/form.js";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import schema from "./validations";
+import { schema } from "./validations";
 import { useContext } from "react";
 import { UserContext } from "/src/contexts/UserContext";
 
-const Register = () => {
+export const Register = () => {
   document.title = "Kenzie Hub - Register";
 
   const { disabled, register: registerForm } = useContext(UserContext);
@@ -105,5 +105,3 @@ const Register = () => {
     </>
   );
 };
-
-export default Register;

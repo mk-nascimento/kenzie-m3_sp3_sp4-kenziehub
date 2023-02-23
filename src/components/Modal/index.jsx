@@ -1,19 +1,20 @@
 import { useContext } from "react";
 import { TechContext } from "/src/contexts/TechContext";
-import Input from "../Input";
-import StyledModal, {
+import { Input } from "../Input";
+import {
   CloseIcon,
   ModalCloseButton,
   ModalSelectStatus,
+  StyledModal,
 } from "./styles";
-import Button from "/src/styles/button";
+import { Button } from "/src/styles/button";
 
-import Form from "/src/styles/form";
+import { Form } from "/src/styles/form";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerSchema, updateSchema } from "./validations";
 
-const Modal = () => {
+export const Modal = () => {
   const {
     closeModal,
     defaultValues,
@@ -129,5 +130,3 @@ const Modal = () => {
     </StyledModal>
   );
 };
-
-export default Modal;
